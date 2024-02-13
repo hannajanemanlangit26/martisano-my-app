@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Example</title>
+</head>
+<body>
+    <h1>Search Example</h1>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="search()">Search</button>
+    <div id="searchResults"></div>
+
+    <script>
+        // Sample array of items to search through
+        var items = ["apple", "banana", "orange", "grape", "kiwi", "pineapple"];
+
+        // Function to perform search
+        function search() {
+            var searchInput = document.getElementById("searchInput").value.toLowerCase();
+            var searchResults = document.getElementById("searchResults");
+            searchResults.innerHTML = ""; // Clear previous results
+
+            if (searchInput) {
+                var results = items.filter(function(item) {
+                    return item.toLowerCase().includes(searchInput);
+                });
+
+                if (results.length > 0) {
+                    var resultList = document.createElement("ul");
+                    results.forEach(function(result) {
+                        var listItem = document.createElement("li");
+                        listItem.textContent = result;
+                        resultList.appendChild(listItem);
+                    });
+                    searchResults.appendChild(resultList);
+                } else {
+                    searchResults.textContent = "No results found.";
+                }
+            } else {
+                searchResults.textContent = "Please enter a search query.";
+            }
+        }
+    </script>
+</body>
+</html>
