@@ -43,27 +43,153 @@
 
 
 <body>
-    <h1>To-Do List</h1>
-    <input type="text" id="taskInput" placeholder="Enter a task">
-    <button onclick="addTask()">Add Task</button>
-    <ul id="tasks"></ul>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List 2021</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #new-task-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #new-task-input {
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #new-task-submit {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #new-task-submit:hover {
+            background-color: #45a049;
+        }
+
+        .task-list {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .task {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .task .content {
+            margin-bottom: 10px;
+        }
+
+        .task .text {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .task .actions {
+            text-align: right;
+        }
+
+        .task .actions button {
+            padding: 5px 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .task .actions button.delete {
+            background-color: #f44336;
+        }
+
+        .task .actions button:hover {
+            background-color: #45a049;
+        }
+
+        .task .actions button.delete:hover {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Task List 2021</h1>
+        <form id="new-task-form">
+            <input 
+                type="text" 
+                name="new-task-input" 
+                id="new-task-input" 
+                placeholder="What do you have planned?" />
+            <input 
+                type="submit"
+                id="new-task-submit" 
+                value="Add task" />
+        </form>
+    </header>
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+
+            <div id="tasks">
+
+                <!-- <div class="task">
+                    <div class="content">
+                        <input 
+                            type="text" 
+                            class="text" 
+                            value="A new task"
+                            readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+    </main>
 
     <script>
-        // Function to add a task
-        function addTask() {
-            var taskInput = document.getElementById("taskInput");
-            var task = taskInput.value.trim();
-
-            if (task !== "") {
-                var tasksList = document.getElementById("tasks");
-                var newTaskItem = document.createElement("li");
-                newTaskItem.textContent = task;
-                tasksList.appendChild(newTaskItem);
-                taskInput.value = "";
-            } else {
-                alert("Please enter a task!");
-            }
-        }
+        // JavaScript code goes here...
     </script>
+</body>
+</html>
+
 </body>
 </html>
