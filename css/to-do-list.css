@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #333; /* Dark background color */
+    overflow: hidden; /* Clear floats */
+}
+
+.navbar a {
+    float: left; /* Float links side by side */
+    display: block; /* Make the links into block elements */
+    color: white; /* White text color */
+    text-align: center; /* Center-align text */
+    padding: 14px 20px; /* Padding inside the links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Darken the background color on mouse-over */
+    color: black; /* Change text color on mouse-over */
+}

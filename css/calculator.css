@@ -1,0 +1,104 @@
+body {
+    width: 500px;
+    margin: 4% auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px; /* Adjusted letter-spacing for better readability */
+    font-size: 1.5rem; /* Adjusted font-size for better proportion */
+    user-select: none; /* Simplified user-select property for cross-browser compatibility */
+}
+
+.calculator {
+    padding: 20px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; /* Adjusted border-radius for better appearance */
+}
+
+.input {
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Adjusted border-radius for better appearance */
+    height: 60px;
+    padding: 10px 15px; /* Adjusted padding for better appearance */
+    text-align: right;
+    font-size: 2rem; /* Adjusted font-size for better appearance */
+    overflow-x: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.input:hover {
+    border-color: #bbb; /* Changed border-color on hover for better contrast */
+    box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.operators div {
+    display: inline-block;
+    border: 1px solid #bbb;
+    border-radius: 4px; /* Adjusted border-radius for better appearance */
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px 4px 10px 0;
+    cursor: pointer;
+    background-color: #ddd;
+    transition: all 0.2s ease-in-out;
+}
+
+.operators div:hover {
+    background-color: #f0f0f0; /* Changed background-color on hover for better contrast */
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.operators div:active {
+    font-weight: bold;
+}
+
+.leftPanel {
+    display: inline-block;
+}
+
+.numbers div {
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Adjusted border-radius for better appearance */
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 4px 10px 0;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease-in-out;
+}
+
+.numbers div:hover {
+    background-color: #f4f4f4; /* Changed background-color on hover for better contrast */
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.numbers div:active {
+    font-weight: bold;
+}
+
+.equal {
+    display: inline-block;
+    border: 1px solid #3079ED;
+    border-radius: 4px; /* Adjusted border-radius for better appearance */
+    width: 17%;
+    text-align: center;
+    padding: 20px 10px; /* Adjusted padding for better appearance */
+    margin: 10px 6px 10px 0;
+    vertical-align: top;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #4d90fe;
+    transition: all 0.2s ease-in-out;
+}
+
+.equal:hover {
+    background-color: #307CF9;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.equal:active {
+    font-weight: bold;
+}

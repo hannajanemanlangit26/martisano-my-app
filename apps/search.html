@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+<style>
+    body {
+    background-color: rgb(161, 119, 55); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+</style>
+<body>
+    <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <h1>Searchs</h1>
+    <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="search()" id="searchButton">Search</button>
+        <div id="searchResults"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function search() {
+            var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
+            var searchResults = document.getElementById("searchResults");
+            searchResults.innerHTML = "";
+
+            if (searchTerm !== "") {
+                var found = false;
+                var items = ["apple", "banana", "orange", "grape", "kiwi", "pineapple"];
+
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].toLowerCase().indexOf(searchTerm) !== -1) {
+                        var resultItem = document.createElement("div");
+                        resultItem.textContent = items[i];
+                        searchResults.appendChild(resultItem);
+                        found = true;
+                    }
+                }
+
+                if (!found) {
+                    searchResults.textContent = "No results found.";
+                }
+            } else {
+                searchResults.textContent = "Please enter a search term.";
+            }
+        }
+    </script>
+</body>
+</html>
