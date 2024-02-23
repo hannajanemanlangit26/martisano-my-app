@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/calculator.css">
+</head>
+<div class="navbar">
+	<a href="../index.html">Home</a>
+	<a href="#">About</a>
+	<a href="#">Contact</a>
+</div>
+<body>
+    <div class="calculator">
+        <div class="input" id="input"></div>
+        <div class="buttons">
+            <div class="operators">
+                <div onclick="append('+')">+</div>
+                <div onclick="append('-')">-</div>
+                <div onclick="append('*')">&times;</div>
+                <div onclick="append('/')">&divide;</div>
+            </div>
+            <div class="leftPanel">
+                <div class="numbers">
+                    <div onclick="append('7')">7</div>
+                    <div onclick="append('8')">8</div>
+                    <div onclick="append('9')">9</div>
+                </div>
+                <div class="numbers">
+                    <div onclick="append('4')">4</div>
+                    <div onclick="append('5')">5</div>
+                    <div onclick="append('6')">6</div>
+                </div>
+                <div class="numbers">
+                    <div onclick="append('1')">1</div>
+                    <div onclick="append('2')">2</div>
+                    <div onclick="append('3')">3</div>
+                </div>
+                <div class="numbers">
+                    <div onclick="append('0')">0</div>
+                    <div onclick="append('.')">.</div>
+                    <div id="clear" onclick="clearInput()">C</div>
+                </div>
+            </div>
+            <div class="equal" id="result" onclick="calculate()">=</div>
+        </div>
+    </div>
+
+    <script>
+        function append(value) {
+            document.getElementById('input').innerHTML += value;
+        }
+
+        function clearInput() {
+            document.getElementById('input').innerHTML = '';
+        }
+
+        function calculate() {
+            var expression = document.getElementById('input').innerHTML;
+            if (expression) {
+                var result = eval(expression);
+                document.getElementById('input').innerHTML = result;
+            }
+        }
+    </script>
+</body>
+</html>
